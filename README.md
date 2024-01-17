@@ -34,3 +34,25 @@
     <li> Call splitDocuments(loadeDocument).
  </ol>
 
+# Vector Stores
+
+<head> Create Vector Embedding 
+<ol>
+    <li> Import OpenAI Embedding (e.g. OpenAI Embedding)
+    <li> Call constructor for Embedding Library
+</ol>
+
+<head> Create Vector Store
+<ol>
+    <li> Import Vector Store Library (e.g. langchain/vectorstores/memory)
+    <li> Call constructor with Vector Embedding  
+</ol>
+
+<head> Load Data into Vector Store and create retriever
+<ol>
+    <li> Use Loader (e.g. PDFLoader)
+    <li> Split the Document using Spliter
+    <li> Call addDocuments on vectoreStore to load Doc Splits
+    <li> Call asRetriever() on vectorStore to get vectorRetriever
+</ol>
+
