@@ -1,1 +1,1 @@
-export const print = (...args) => console.log(JSON.stringify(args)); 
+export const print = (...args) => { console.log("Result:\n");console.log(JSON.stringify(args)) }; 

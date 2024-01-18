@@ -56,3 +56,19 @@
     <li> Call asRetriever() on vectorStore to get vectorRetriever
 </ol>
 
+# Questions and Answers
+
+<head> Document retrieval in Chain
+<ol>
+    <li> Extract Question from Query
+    <li> Retrieve Documents in Chunks related to Question
+    <li> Convert Retrieved Chunks into Context
+</ol>
+
+<head> Augmented Generation
+<ol>
+    <li> Create Answer Generation Template with "context" and "question".
+    <li> Contruct Retrieval Chain (Runnable Seq) of using following format: <br> (Context + Question) -> (Template) -> (Model) -> StringOutputParser
+    <li> Invoke Retrival Chain with User Query (e.g. { question: "blah blah blah!"})
+    <li> Follow up doesn't work in this chain
+</ol>

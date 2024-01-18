@@ -27,10 +27,6 @@ print(similarity.cosine(vector1, simlarVect));
 
 // STEP -2 Create VectorStore and Load PDF Document in the store
 
-import { MemoryVectorStore } from "langchain/vectorstores/memory";
-
-const vectorStore = new MemoryVectorStore(embb);
-
 import { PDFLoader } from "langchain/document_loaders/fs/pdf";
 import {
     RecursiveCharacterTextSplitter
@@ -48,6 +44,10 @@ const splitter = new RecursiveCharacterTextSplitter({
 const splitDocs = await splitter.splitDocuments(rawDocs);
 
 print(splitDocs); // Return Split Document array
+
+import { MemoryVectorStore } from "langchain/vectorstores/memory";
+
+const vectorStore = new MemoryVectorStore(embb);
 
 print("Loading Documents into VectorStore");
 await vectorStore.addDocuments(splitDocs); //Returns nothing
