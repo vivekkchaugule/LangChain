@@ -72,3 +72,30 @@
     <li> Invoke Retrival Chain with User Query (e.g. { question: "blah blah blah!"})
     <li> Follow up doesn't work in this chain
 </ol>
+
+<head> Simple Flow with No History 
+<ul>
+    <li> Question is Input
+    <li> Que goes through Document Retrieval Chain and then passed to the Prompt.
+    <li> LLM Generates the answer based on prompt.
+</ul>
+
+![Alt text](image.png)
+
+<head> Runnable Passthrough 
+<ul>
+    <li> Runnable Passthrough sets the extra property to its input.
+    <li> As seen in the image it takes {question: "", history: ""} and adds {standalone: ""} to the input.
+</ul>
+
+![Alt text](image-1.png)
+
+<head> Runnable With Message History
+<ul>
+    <li> ChatHistory: central storage for storing chat history
+    <li> History is injected into Runnable
+    <li> Question is injected as HumanMessage into history
+    <li> Output is stored as AIMessage into history
+</ul>
+
+![Alt text](image-2.png)
